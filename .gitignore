@@ -1,0 +1,12 @@
+# Private keys and private-key containers, including encrypted ones.
+*.key
+*.key.*
+*.p12
+*.pfx
+private/
+# Temporary requests and CA state. Keep final .crt, .cnf, .bat and screenshots.
+*.csr
+*.srl
+*.old
+*.rnd
+.smoke-test/
