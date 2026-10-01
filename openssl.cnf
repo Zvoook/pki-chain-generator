@@ -1,5 +1,5 @@
 HOME			= .
-RANDFILE		= $ENV::HOME/.rnd
+RANDFILE = ./.rnd
 
 ####################################################################
 [ ca ]
@@ -97,20 +97,19 @@ basicConstraints=CA:FALSE
 keyUsage = dataEncipherment, keyEncipherment
 extendedKeyUsage = emailProtection
 
-#subjectKeyIdentifier=????
-#authorityKeyIdentifier=????
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always
 
-nsComment = "Personal Student Certificate for Ivan Ivanov"
-subjectAltName=email:ivanoff@edu.hse.ru
+nsComment = "Personal Student Certificate for Danilov Dmitriy"
+subjectAltName=email:daniloff@edu.hse.ru
 nsCertType = email
 
 # Student number - custom extension
 # ??????
 
 [ v3_ca ]
-#subjectKeyIdentifier=???????
-
-#authorityKeyIdentifier= ???????
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always
 
 basicConstraints = critical, CA:true
 
@@ -120,17 +119,14 @@ extendedKeyUsage = emailProtection
 subjectAltName = URI:http://hse.ru/
 
 [ v3_mca ]
-#subjectKeyIdentifier=??????
-
-#authorityKeyIdentifier=???????????
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always
 
 basicConstraints = critical, CA:true, pathlen:0
-#nameConstraints = ??????
+nameConstraints = critical, permitted;email:edu.hse.ru
 
 keyUsage = critical, keyCertSign
 extendedKeyUsage = emailProtection
-
-crlDistributionPoints = URI:http://crl.comodoca.com/COMODORSACertificationAuthority.crl
 
 subjectAltName = URI:http://hse.ru/ba/is/
 issuerAltName = issuer:copy
